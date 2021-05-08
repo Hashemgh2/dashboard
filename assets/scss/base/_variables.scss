@@ -1,0 +1,44 @@
+$font_path: "~@/assets/fonts/";
+
+// PartFontIcon Variables
+$icomoon-font-family: "PartFontIcon" !default;
+$icomoon-font-path: "~@/assets/fonts/fonticon" !default;
+$icon-document-copy: "\e900";
+$icon-download: "\e901";
+$icon-globe: "\e902";
+$icon-letter: "\e903";
+$icon-logo-github: "\e904";
+$icon-logo-twitter: "\e905";
+$icon-note: "\e906";
+$icon-shape-star-1: "\e907";
+$icon-shape-star-2: "\e908";
+$icon-shape-star: "\e909";
+$icon-url: "\e90a";
+$icon-zoom-out: "\e90b";
+$icon-arrow-right2: "\ea3c";
+$icon-arrow-left2: "\ea40";
+$icon-ctrl: "\ea50";
+
+$primary: #30306c;
+$primary-light: #eef7ff;
+$primary-dark: #062870;
+
+$secondary: #228ced;
+$secondary-light: #228ced;
+$secondary-dark: #228ced;
+
+$theme-colors: (
+    '$primary': #30306c,
+   ' $primary_light': #eef7ff,
+    '$primary_dark': #062870,
+
+    '$secondary': #228ced,
+    '$secondary_light': #228ced,
+    '$secondary_dark': #228ced,
+);
+
+:export {
+  @each $key, $value in $theme-colors {
+    #{unquote($key)}: $value;
+  }
+}

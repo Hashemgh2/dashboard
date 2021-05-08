@@ -1,0 +1,6 @@
+<svg id="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="add">
+    <path id="add_Background_Mask_" data-name="add (Background/Mask)" d="M0,0H24V24H0Z" fill="none"/>
+    <path id="_" data-name="+" d="M0,8.064V4.7H4.732V0h3.36V4.7H12.88v3.36H8.092v4.76H4.732V8.064Z" transform="translate(6 6)" fill="#b2b9d9"/>
+  </g>
+</svg>

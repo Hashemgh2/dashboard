@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+  <g id="dashboard_1" data-name="dashboard 1" transform="translate(-0.375)">
+    <path id="dashboard_1_Background_Mask_" data-name="dashboard 1 (Background/Mask)" d="M0,0H28V28H0Z" transform="translate(0.375)" fill="none"/>
+    <path class="icon" id="Union_4" data-name="Union 4" d="M.75,18.322A.75.75,0,0,1,0,17.572a7.818,7.818,0,0,1,15.281-2.343,7.532,7.532,0,0,1,.364,2.343.75.75,0,0,1-.75.751ZM4.793,7.316A4.282,4.282,0,1,1,7.822,8.573,4.292,4.292,0,0,1,4.793,7.316Z" transform="translate(6 5)" fill="#7a84b1" stroke="rgba(0,0,0,0)" stroke-miterlimit="10" stroke-width="1"/>
+  </g>
+</svg>

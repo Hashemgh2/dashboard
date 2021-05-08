@@ -1,0 +1,105 @@
+
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?nxd9ng');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?nxd9ng#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?nxd9ng') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?nxd9ng') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?nxd9ng##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.icon-document-copy {
+  &:before {
+    content: $icon-document-copy;
+  }
+}
+.icon-download {
+  &:before {
+    content: $icon-download;
+  }
+}
+.icon-globe {
+  &:before {
+    content: $icon-globe;
+  }
+}
+.icon-letter {
+  &:before {
+    content: $icon-letter;
+  }
+}
+.icon-logo-github {
+  &:before {
+    content: $icon-logo-github;
+  }
+}
+.icon-logo-twitter {
+  &:before {
+    content: $icon-logo-twitter;
+  }
+}
+.icon-note {
+  &:before {
+    content: $icon-note;
+  }
+}
+.icon-shape-star-1 {
+  &:before {
+    content: $icon-shape-star-1;
+  }
+}
+.icon-shape-star-2 {
+  &:before {
+    content: $icon-shape-star-2;
+  }
+}
+.icon-shape-star {
+  &:before {
+    content: $icon-shape-star;
+  }
+}
+.icon-url {
+  &:before {
+    content: $icon-url;
+  }
+}
+.icon-zoom-out {
+  &:before {
+    content: $icon-zoom-out;
+  }
+}
+.icon-arrow-right2 {
+  &:before {
+    content: $icon-arrow-right2;
+  }
+}
+.icon-arrow-left2 {
+  &:before {
+    content: $icon-arrow-left2;
+  }
+}
+.icon-ctrl {
+  &:before {
+    content: $icon-ctrl;
+  }
+}
+

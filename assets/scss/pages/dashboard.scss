@@ -1,0 +1,315 @@
+.v-content{
+  padding:30px;
+  &__top{
+    display: flex;
+  }
+  &__info{
+    flex: 50%;
+    max-width: 50%;
+
+    .top{
+      margin: 0;
+
+      .col{
+        padding: 0 12px 12px 12px;
+      }
+    }
+
+    .bottom{
+      margin: 0;
+      .col{
+        flex: 25%;
+        max-width: 25%;
+        &:first-child{
+          flex: 50%;
+          max-width: 50%;
+        }
+        .total-income{
+          border-radius: 15px;
+          background: #6418C3;
+          overflow: hidden;
+          .top{
+            color: #fff;
+            padding: 10px;
+            h4{
+              text-align: right;
+            }
+            p{
+              text-align: right;
+              font-size: 12px;
+            }
+            .percent{
+              background: #38E25D;
+              display: inline-block;
+              border-radius: 9px;
+              padding: 3px 6px;
+              font-size: 12px;
+              float: left;
+              position: relative;
+              top: -62px;
+            }
+          }
+          .bottom{
+            padding: 22px;
+            background: #5214A0;
+            p{
+              font-size: 28px;
+              color: #fff !important;
+              text-align: center;
+              width: 100%;
+              margin: 0;
+              display: inline-block;
+            span{
+                font-size: 15px;
+              }
+            }
+
+          }
+        }
+        .box{
+          background: #fff;
+          border-radius: 15px;
+          overflow: hidden;
+          padding: 10px 10px 0;
+          max-height: 200px;
+          min-height: 173px;
+          img{
+            margin: 10px auto;
+            display: block;
+          }
+          .text{
+            display: block;
+            font-size: 12px;
+            text-align: center;
+            margin: 10px 0;
+          }
+          .price{
+            font-size: 20px;
+            text-align: center;
+            margin: 5px 0;
+            color: #B2B9D9;
+          }
+          .count-shop{
+            font-size: 10px;
+            color: #01AA05;
+            text-align: center;
+          }
+        }
+
+      }
+    }
+  }
+  &__chart{
+    flex: 50%;
+    max-width: 50%;
+    height: 260px;
+    background: #fff;
+    border-radius: 30px;
+  }
+  &__center{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: flex-start;
+    .box-chart{
+      background: #fff;
+      border-radius: 15px;
+      padding: 10px 20px;
+      flex: 23%;
+      max-width: 23%;
+      margin: 1% 1%;
+      .title{
+        display: flex;
+        justify-content: space-between;
+        h3{
+          font-size: 12px;
+        }
+        span{
+          font-size: 12px;
+          color: #6418C3;
+        }
+        .date{
+          color: #B2B9D9
+
+        }
+      }
+      .chart{
+        height: 135px;
+        border: 1px solid #ccc;
+      }
+      &__detail{
+        span{
+          color: #7A84B1;
+          text-align: center;
+          display: block;
+          margin: 5px 0;
+          font-size: 12px;
+        }
+        p{
+          color: #7A84B1;
+          text-align: center;
+          display: block;
+          margin: 5px 0;
+          font-size: 10px;
+        }
+        .count-user{
+          .user-box{
+            margin: 15px 0;
+            display: block;
+            &__subject{
+              color: #6418C3;
+              font-size: 12px;
+              text-align: center;
+            }
+            &__num{
+              background: #EEF0F7;
+              color: #7A84B1;
+              font-size: 30px;
+              border-radius: 10px;
+              text-align: center;
+
+            }
+          }
+        }
+
+      }
+      &__price{
+        display: flex;
+        border-top: 1px solid #7070704d;
+        height: 40px;
+        line-height: 40px;
+        justify-content: space-between;
+        .text{
+          font-size: 15px;
+        }
+        .price{
+          font-size: 15px;
+        }
+
+      }
+
+    }
+    .box-progress{
+      flex: 23%;
+      max-width: 23%;
+      margin: 1% 1%;
+      .title{
+        display: flex;
+        justify-content: space-between;
+        h3{
+          font-size: 12px;
+        }
+        span{
+          font-size: 12px;
+          color: #6418C3;
+        }
+        .date{
+          color: #B2B9D9
+
+        }
+      }
+      &__volume{
+        background: #fff;
+        border-radius: 15px;
+        padding: 10px 20px;
+        height: 245px;
+        margin: 0 0 27px;
+
+
+      }
+      &__sellers{
+        background: #fff;
+        border-radius: 15px;
+        padding: 10px 20px;
+        .top-sellers{
+          padding: 0;
+          margin: 0;
+          li{
+            display: flex;
+            justify-content: space-between;
+            padding: 0 0 4px;
+            margin: 0 0 4px;
+            border-bottom: 1px solid #d4d4d49e;
+            &:last-child{
+              border: 0;
+            }
+
+          }
+          &__info{
+            display: flex;
+            .star{
+
+            }
+            .count{
+              margin: 0 10px;
+            }
+            .name{
+              p{
+                font-size: 12px;
+                margin: 0;
+              }
+              span{
+                font-size: 10px;
+                width: 100%;
+                text-align: right;
+                display: block;
+              }
+            }
+          }
+          &__price{
+            display: flex;
+            align-items: center;
+            p{
+              margin: 0;
+              color: #6418C3;
+            }
+            img{
+              width: 15px;
+              margin: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__bottom{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: #CFD3E7;
+  }
+
+}
+
+.filter-time {
+  height: 50px;
+  fieldset{
+    background: #fff!important;
+    border-radius: 15px!important;
+    border: 0!important;
+    margin: 0;
+    padding: 0;
+    .v-input__control{
+      height: 50px
+    }
+    .v-input__slot{
+      height: 50px;
+    }
+
+  }
+
+}
+.search{
+  height: 55px;
+  background: #fff!important;
+  border-radius: 15px!important;
+  padding: 0;
+  margin: 0;
+  .v-input__slot{
+    height: 100%;
+    min-height: 43px;
+    margin: 0;
+  }
+}
