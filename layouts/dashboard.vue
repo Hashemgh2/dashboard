@@ -58,7 +58,8 @@ export default {
     border-radius: 30px;
     width: 67%;
     width: calc( 100% - 23.5em );
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     height: 93vh;
     margin: 30px;
   }
@@ -75,9 +76,9 @@ export default {
       .v-list-item {
         padding: 0px 3px !important;
         margin: 0 !important;
-        .v-list-item__title {
-          color: #000 !important;
-        }
+        /*.v-list-item__title {*/
+        /*  color: #000 !important;*/
+        /*}*/
       }
     }
   }

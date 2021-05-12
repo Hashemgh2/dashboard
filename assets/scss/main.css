@@ -2560,10 +2560,10 @@ This set of fonts are used in this project under the license: (.....)
   direction: rtl;
 }
 *::-webkit-scrollbar-track {
-  background: #f6f6fe;
+  background: #2E3D83 ;
 }
 *::-webkit-scrollbar-thumb {
-  background: #5050a0;
+  background: #2E3D83 ;
   border-radius: 4px;
 }
 

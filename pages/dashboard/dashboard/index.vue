@@ -5,7 +5,10 @@
         <div class=" row top">
           <v-col>
             <v-select
+              v-model="select"
               :items="items"
+              item-text="time"
+              item-value="value"
               outlined
               class="filter-time"
             ></v-select>
@@ -54,7 +57,15 @@
           </v-col>
         </div>
       </div>
-      <div class="v-content__chart"></div>
+      <div class="v-content__chart">
+          <VueApexCharts
+            height="250"
+            type="line"
+            :options="chartOptions"
+            :series="series"
+          ></VueApexCharts>
+
+      </div>
 
     </div>
     <div class="v-content__center">
@@ -64,15 +75,13 @@
             <h3>تعداد اشتراک‌ها</h3>
             <span>۱۳۵,۲۴۶</span>
           </div>
-          <div class="chart"></div>
-          <div class="box-chart__detail">
-            <span>جزئیات هر اشتراک</span>
-            <ul>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
+          <div class="chart total-chart">
+            <VueApexCharts
+              type="donut"
+              height="410"
+              :options="chartOptionsSub"
+              :series="seriesSub"
+            ></VueApexCharts>
           </div>
           <div class="box-chart__price">
             <span class="text">مجموع</span>
@@ -86,15 +95,13 @@
             <h3>تعداد ری‌اکتیویشن</h3>
             <span>۱۳۵,۲۴۶</span>
           </div>
-          <div class="chart"></div>
-          <div class="box-chart__detail">
-            <span>جزئیات هر اشتراک</span>
-            <ul>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
+          <div class="chart total-chart">
+            <VueApexCharts
+              type="donut"
+              height="410"
+              :options="chartOptionsSub"
+              :series="seriesSub"
+            ></VueApexCharts>
           </div>
           <div class="box-chart__price">
             <span class="text">مجموع</span>
@@ -109,7 +116,14 @@
             <h3>پاداش دعوت از دیگران</h3>
             <span class="date">تا ۲۱ بهمن</span>
           </div>
-          <div class="chart"></div>
+          <div class="chart">
+            <VueApexCharts
+              height="245"
+              type="radialBar"
+              :options="chartOptionsInv"
+              :series="seriesInv"
+            ></VueApexCharts>
+          </div>
           <div class="box-chart__detail">
             <p>این مبلغ در پایان هر ماه بین تمام اعضاء تقسیم می‌شود
 (به تناسب کاربران فعال شده هر مجموعه / شخص)</p>
@@ -140,6 +154,31 @@
             <h3>حجم فروش شرکت‌های پخش</h3>
             <img src="@/assets/images/icons/plus.svg" alt="">
           </div>
+          <ul class="box-progress__bar">
+            <li  v-for="(item, index) in progress" :key="index">
+              <div class="progress-info">
+                <div class="subject">
+                  <span class="count">{{index + 1}}</span>
+                  <span class="name">{{item.name}}</span>
+                </div>
+                <div class="percent">
+                  <div class="status">{{item.status}}</div>
+
+
+                  <div class="percent-num">%{{item.percent}}</div>
+                  <div class="icon">
+                    <img src="../../../assets/images/icons/report.svg" alt="">
+                  </div>
+                </div>
+              </div>
+              <v-progress-linear
+                v-model="item.percent"
+                height="10"
+                :color="item.color"
+              >
+              </v-progress-linear>
+            </li>
+          </ul>
         </div>
         <div class="box-progress__sellers">
           <div class="title">

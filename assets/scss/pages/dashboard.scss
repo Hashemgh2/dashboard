@@ -1,11 +1,12 @@
 .v-content{
-  padding:30px;
   &__top{
     display: flex;
+    padding: 30px 30px 0
   }
   &__info{
     flex: 50%;
     max-width: 50%;
+    margin-left: 1%;
 
     .top{
       margin: 0;
@@ -100,13 +101,14 @@
     }
   }
   &__chart{
-    flex: 50%;
-    max-width: 50%;
+    flex: 48%;
+    max-width: 48%;
     height: 260px;
     background: #fff;
     border-radius: 30px;
   }
   &__center{
+    padding: 15px 30px 30px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -135,9 +137,26 @@
 
         }
       }
-      .chart{
-        height: 135px;
-        border: 1px solid #ccc;
+      .total-chart{
+        height: 400px;
+        top: -25px;
+        position: relative;
+        .apexcharts-legend{
+          flex-direction: column;
+          margin-top: 254px;
+          position: relative !important;
+          top: 0 !important;
+          display: flex;
+          padding: 0px;
+          right: -7px!important;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          align-items: flex-start;
+          .apexcharts-legend-series{
+            height: 27px;
+            width: 100%;
+          }
+        }
       }
       &__detail{
         span{
@@ -272,6 +291,53 @@
           }
         }
       }
+      &__bar{
+        padding: 0;
+        margin: 0;
+        li{
+          .progress-info{
+            display: flex;
+            justify-content: space-between;
+            .subject{
+              display: flex;
+              .count{
+                color: #CFD3E7;
+                font-size: 13px;
+                margin: 3px 4px 2px 7px;
+              }
+              .name{
+                color: #7A84B1;
+                font-size: 12px;
+                line-height: 22px;
+              }
+
+            }
+            .percent{
+              display: flex;
+              .status{
+                font-size: 11px;
+                direction: ltr!important;
+                color: #07ad0d;
+                line-height: 26px;
+                margin: 0 9px 0 3px;
+
+              }
+              .percent-num{
+                margin: 0 9px 0 3px;
+                font-size: 12px;
+                line-height: 26px;
+              }
+              .icon{
+                img{
+                  width: 15px;
+                  margin: 5px 4px;
+                }
+              }
+            }
+          }
+        }
+
+      }
     }
   }
   &__bottom{
@@ -279,6 +345,18 @@
     justify-content: space-between;
     padding: 15px;
     background: #CFD3E7;
+    align-items: center;
+    .amount-wallet{
+      display: flex;
+      p{
+        font-size: 15px;
+        color: #7A84B1;
+        margin: 1px 29px;
+      }
+      span{
+
+      }
+    }
   }
 
 }
@@ -312,4 +390,19 @@
     min-height: 43px;
     margin: 0;
   }
+}
+.v-progress-linear__background{
+  background: #E4EAF0!important;
+}
+.v-progress-linear{
+  border-radius: 15px!important;
+  overflow: hidden!important;
+  & *{
+    direction: ltr!important;
+  }
+}
+
+span.apexcharts-legend-text {
+  margin: 0 !important;
+  margin-right: 14px !important;
 }
