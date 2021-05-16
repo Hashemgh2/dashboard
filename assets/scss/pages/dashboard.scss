@@ -1,37 +1,73 @@
+@import '../abstracts/media-query';
+@import './auth';
 .v-content{
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 93vh;
   &__top{
-    display: flex;
-    padding: 30px 30px 0
+    display: block;
+    padding: 30px 8px 0;
+    @include breakpoint(small) {
+      padding: 30px 30px 0;
+    }
+    @include breakpoint(xlarge) {
+      display: flex;
+    }
   }
   &__info{
-    flex: 50%;
-    max-width: 50%;
+    flex: 100%;
+    max-width: 100%;
     margin-left: 1%;
+    @include breakpoint(xlarge) {
+      flex: 50%;
+      max-width: 50%;
+    }
 
     .top{
-      margin: 0;
+      display: block;
+      padding: 0 13px 8px;
+      @include breakpoint(small) {
+       display: flex;
+        padding: 0 13px 8px;
+      }
 
       .col{
-        padding: 0 12px 12px 12px;
+        padding: 0 4px 16px;
+        @include breakpoint(medium) {
+          padding: 13px 10px 16px 11px;
+        }
       }
     }
 
     .bottom{
       margin: 0;
       .col{
-        flex: 25%;
-        max-width: 25%;
+        flex: 100%;
+        max-width: 100%;
+        width: 100%;
+        padding: 6px 0;
+        @include breakpoint(medium) {
+          flex: 25%;
+          max-width: 25%;
+          padding: 12px;
+        }
         &:first-child{
-          flex: 50%;
-          max-width: 50%;
+          flex: 100%;
+          max-width: 100%;
+          @include breakpoint(medium) {
+            flex: 50%;
+            max-width: 50%;
+          }
         }
         .total-income{
           border-radius: 15px;
           background: #6418C3;
           overflow: hidden;
+          width: 100%;
           .top{
             color: #fff;
             padding: 10px;
+            display: block;
             h4{
               text-align: right;
             }
@@ -85,10 +121,13 @@
             margin: 10px 0;
           }
           .price{
-            font-size: 20px;
+            font-size: 15px;
             text-align: center;
             margin: 5px 0;
             color: #B2B9D9;
+            @include breakpoint(ultra) {
+              font-size: 20px;
+            }
           }
           .count-shop{
             font-size: 10px;
@@ -101,32 +140,57 @@
     }
   }
   &__chart{
-    flex: 48%;
-    max-width: 48%;
+    flex: 100%;
+    max-width: 100%;
     height: 260px;
     background: #fff;
     border-radius: 30px;
+    margin: 6px 0;
+    @include breakpoint(xlarge) {
+      flex: 48%;
+      max-width: 48%;
+      margin: 0;
+    }
   }
   &__center{
-    padding: 15px 30px 31px;
-    display: flex;
+    padding: 15px 8px 31px;
+    display: block;
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: stretch;
     align-items: flex-start;
+    @include breakpoint(small) {
+      padding: 15px 30px 31px;
+    }
+    @include breakpoint(medium) {
+      display: flex;
+    }
+
     .box-chart{
       background: #fff;
       border-radius: 15px;
       padding: 10px 20px;
-      flex: 23%;
-      max-width: 23%;
-      margin: 1% 1%;
+      flex: 100%;
+      max-width: 100%;
+      margin: 2% 1% 5%;
+      @include breakpoint(medium) {
+        flex: 48%;
+        margin: 1% 1%;
+        max-width: 48%;
+      }
+      @include breakpoint(xlarge) {
+        flex: 23%;
+        max-width: 23%;
+      }
       .title{
         display: flex;
         justify-content: space-between;
         h3{
-          font-size: 12px;
+          font-size: 10px;
+          @include breakpoint(ultra) {
+            font-size: 12px;
+          }
         }
         span{
           font-size: 12px;
@@ -211,14 +275,27 @@
 
     }
     .box-progress{
-      flex: 23%;
-      max-width: 23%;
+      flex: 100%;
+      max-width: 100%;
       margin: 1% 1%;
+      @include breakpoint(medium) {
+        flex: 48%;
+        max-width: 48%;
+      }
+      @include breakpoint(xlarge) {
+        flex: 23%;
+        max-width: 23%;
+      }
       .title{
         display: flex;
         justify-content: space-between;
+        align-content: stretch;
+        align-items: flex-start;
         h3{
           font-size: 12px;
+          text-align: right;
+          line-height: 21px;
+          height: 30px;
         }
         span{
           font-size: 12px;
@@ -262,11 +339,11 @@
 
             }
             .count{
-              margin: 0 10px;
+              margin: 0 7px;
             }
             .name{
               p{
-                font-size: 12px;
+                font-size: 10px;
                 margin: 0;
               }
               span{
@@ -283,6 +360,7 @@
             p{
               margin: 0;
               color: #6418C3;
+              font-size: 12px;
             }
             img{
               width: 15px;
@@ -341,13 +419,22 @@
     }
   }
   &__bottom{
-    display: flex;
+    display: block;
     justify-content: space-between;
     padding: 15px;
     background: #CFD3E7;
     align-items: center;
-    .amount-wallet{
+    @include breakpoint(medium) {
       display: flex;
+    }
+    .amount-wallet{
+      display: block;
+      width: 100%;
+      text-align: center;
+      @include breakpoint(medium) {
+        display: flex;
+        text-align: right;
+      }
       p{
         font-size: 15px;
         color: #7A84B1;
@@ -355,6 +442,14 @@
       }
       span{
 
+      }
+    }
+    .main-btn{
+      display: block;
+      margin: 15px auto 0;
+      @include breakpoint(medium) {
+        display: inline-block;
+        margin:0;
       }
     }
   }
@@ -405,4 +500,17 @@
 span.apexcharts-legend-text {
   margin: 0 !important;
   margin-right: 14px !important;
+}
+
+  .v-select__selection--comma{
+    font-size: 12px;
+    @include breakpoint(ultra) {
+      font-size: 14px;
+    }
+  }
+.v-input input{
+  font-size: 12px;
+  @include breakpoint(ultra) {
+    font-size: 14px;
+  }
 }

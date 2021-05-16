@@ -66,10 +66,11 @@ import SvgExit from "~/assets/images/icons/exit.svg?raw";
 export default {
   computed: {
     mini() {
-      // return this.$vuetify.breakpoint.smAndDown || this.toggleMini;
+      return this.$vuetify.breakpoint.smAndDown || this.toggleMini;
     },
   },
   data: () => ({
+    drawer: null,
     itemsMain: [],
     sidebarMenu: true,
     items: [
@@ -144,12 +145,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  @import '../assets/scss/abstracts/media-query';
   ::v-deep {
   .v-navigation-drawer--mini-variant .v-list-item > *:first-child {
     margin: 0;
     padding: 0;
-    width: 116px;
+    width: auto;
+    font-size: 15px;
+    @include breakpoint(medium) {
+      width: 116px !important;
+      font-size: 20px;
+    }
   }
   .v-list-item[href*="disable"] {
     pointer-events: none;
@@ -169,5 +175,11 @@ export default {
     overflow: hidden;
     flex-direction: column;
     flex-wrap: nowrap;
+  }
+  .theme--light.v-navigation-drawer {
+    width:56px !important;
+    @include breakpoint(medium) {
+      width:256px !important;
+    }
   }
 </style>

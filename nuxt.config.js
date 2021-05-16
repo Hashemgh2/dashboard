@@ -43,9 +43,14 @@ export default {
     // Doc: https://github.com/nuxt/content
     // '@nuxt/content',
     '@nuxtjs/svg',
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
 
     // '@nuxtjs/proxy',
   ],
+  auth: {
+    // Options
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

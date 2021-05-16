@@ -1,15 +1,47 @@
 <template>
   <v-app>
+    <div v-if="$auth.loggedIn">
+      {{$auth.user.email}}
+      <v-btn class="main-btn " text>logout</v-btn>
+
+    </div>
+    <div v-else>
+      <v-dialog
+        v-model="dialog"
+        persistent
+        max-width="350"
+      >
+        <div class="form-structor">
+          <div class="signup">
+            <h2 class="form-title" id="signup">ثبت نام</h2>
+            <div class="form-holder">
+              <input type="text" class="input" placeholder="نام" />
+              <input type="email" class="input" placeholder="ایمیل" />
+              <input type="password" class="input" placeholder="رمز ورود" />
+            </div>
+            <button class="submit-btn" @click="dialog = false">ثبت نام</button>
+          </div>
+          <div class="login slide-up">
+            <div class="center">
+              <h2 class="form-title" id="login">ورود</h2>
+              <div class="form-holder">
+                <input type="email" class="input" placeholder="ایمیل" />
+                <input type="password" class="input" placeholder="رمز ورود" />
+              </div>
+              <button class="submit-btn" @click="dialog = false">ورود</button>
+            </div>
+          </div>
+        </div>
+        <template v-slot:activator="{ on, attrs }">
+        </template>
+      </v-dialog>
+    </div>
     <div class="dashboard">
       <div class="dashboard__sidebar">
+
         <Sidebar />
-        <!-- <ToastComponent /> -->
-<!--        <sy-account-popup />-->
-        <!-- <login-dialog/> -->
       </div>
       <div class="dashboard__body">
-<!--        <HeaderLayout />-->
-<!--        <v-divider class="divider"></v-divider>-->
         <nuxt />
       </div>
     </div>
@@ -19,11 +51,52 @@
 <script>
 
 export default {
-  data: () => ({}),
+  data: () => ({
+    dialog: true,
+    valid: false,
+    e1: false,
+    password: '',
+    passwordRules: [
+      (v) => !!v || 'Password is required',
+    ],
+    email: '',
+    emailRules: [
+      (v) => !!v || 'E-mail is required',
+      (v) => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
+    ],
+  }),
   created() {
     this.itemsMain = this.items;
   },
-  computed: {
+  mounted()  {
+    console.clear();
+
+    const loginBtn = document.getElementById('login');
+    const signupBtn = document.getElementById('signup');
+
+    loginBtn.addEventListener('click', (e) => {
+      let parent = e.target.parentNode.parentNode;
+      Array.from(e.target.parentNode.parentNode.classList).find((element) => {
+        if(element !== "slide-up") {
+          parent.classList.add('slide-up')
+        }else{
+          signupBtn.parentNode.classList.add('slide-up')
+          parent.classList.remove('slide-up')
+        }
+      });
+    });
+
+    signupBtn.addEventListener('click', (e) => {
+      let parent = e.target.parentNode;
+      Array.from(e.target.parentNode.classList).find((element) => {
+        if(element !== "slide-up") {
+          parent.classList.add('slide-up')
+        }else{
+          loginBtn.parentNode.parentNode.classList.add('slide-up')
+          parent.classList.remove('slide-up')
+        }
+      });
+    });
   },
 };
 </script>
@@ -32,36 +105,45 @@ export default {
 
 .dashboard {
   overflow-y: scroll;
-  position: fixed;
+  position: static;
   width: 100%;
   height: 100%;
+  @include breakpoint(small) {
+    position: fixed;
+  }
   @include breakpoint(ultra) {
     overflow-y: inherit;
   }
   &__sidebar {
     overflow: hidden;
-    width: 16.666%;
-    width: calc( 17.5em );
-    margin: 28px;
-    margin-left: 2em;
-    border-radius: 30px;
+    margin: 28px 10px;
+    border-radius: 13px;
     float: right;
     height: 93vh;
     background: #EEF0F7;
-    @include breakpoint(ultra) {
-      /*padding: 30px 29px 354.5px 20px;*/
+    @include breakpoint(medium) {
+      border-radius: 30px;
+      margin: 28px;
     }
   }
   &__body {
     transition: all 0.2s ease;
     background: #EEF0F7;
-    border-radius: 30px;
+    border-radius: 13px;
     width: 67%;
-    width: calc( 100% - 23.5em );
+    width: calc( 100% - 5.5em );
     overflow-x: hidden;
     overflow-y: auto;
     height: 93vh;
-    margin: 30px;
+    margin: 30px 0;
+    @include breakpoint(small) {
+      border-radius: 30px;
+      width: calc( 100% - 8.5em );
+      margin: 30px;
+    }
+    @include breakpoint(medium) {
+      width: calc( 100% - 21.5em );
+    }
   }
 }
 ::v-deep {
@@ -150,10 +232,8 @@ export default {
     }
   }
   .v-dialog {
-    border-radius: 20px;
-    background: #f6f6fe;
-    padding: 29px 58px;
-    box-shadow: none;
+    background-color: #fff;
+    border-radius: 16px;
     .theme--light.v-card {
       background-color: #fff;
     }
@@ -305,6 +385,24 @@ export default {
   margin: 0;
   left: 0;
 }
+::v-deep{
+  legend{
+    text-align: right!important;
+    margin-right: 32px!important;
+  }
+  .login-field{
+    label{
+      right: 0 !important;
+      letter-spacing: 0 !important;
+      left: auto !important;
+      font-size: 12px;
+      color: #929292;
+    }
+
+  }
+}
+
+
 </style>
 
 
